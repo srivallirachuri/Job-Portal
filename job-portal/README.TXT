@@ -28,6 +28,7 @@ Functionalities:
 •	View applicants for each job
 •	Accept or reject applicants
 •	Download applicant resumes
+
 Admin
 Functionalities:
 •	Login as admin

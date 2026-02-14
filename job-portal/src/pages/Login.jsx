@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import API from "../api/api";
+import "./AuthPages.css";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -35,26 +37,51 @@ export default function Login() {
   };
 
   return (
-    <form className="form" onSubmit={handleLogin}>
-      <h2>Login</h2>
+    <div className="auth-page">
+      <div className="auth-bg-shapes">
+        <div className="shape shape-1"></div>
+        <div className="shape shape-2"></div>
+        <div className="shape shape-3"></div>
+      </div>
 
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-      />
+      <div className="auth-card">
+        <div className="auth-header">
+          <h2>Welcome Back</h2>
+          <p>Enter your details to access your account</p>
+        </div>
 
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        required
-      />
+        <form className="auth-form" onSubmit={handleLogin}>
+          <div className="input-group">
+            <label>Email Address</label>
+            <input
+              className="auth-input"
+              type="email"
+              placeholder="name@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
 
-      <button type="submit">Login</button>
-    </form>
+          <div className="input-group">
+            <label>Password</label>
+            <input
+              className="auth-input"
+              type="password"
+              placeholder="••••••••"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+
+          <button className="auth-btn" type="submit">Login</button>
+        </form>
+
+        <div className="auth-footer">
+          Don't have an account? <Link to="/register">Create one</Link>
+        </div>
+      </div>
+    </div>
   );
 }

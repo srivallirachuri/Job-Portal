@@ -14,6 +14,7 @@ import PostJob from "./pages/PostJob";
 import EmployerJobs from "./pages/EmployerJobs";
 import Applicants from "./pages/Applicants";
 import NotFound from "./pages/NotFound";
+import LandingPage from "./pages/LandingPage";
 
 export default function App() {
   return (
@@ -21,12 +22,9 @@ export default function App() {
       <Navbar />
 
       <main className="main-content">
-        <Routes>{/* routes */}</Routes>
-      </main>
-
-      <Routes>
-        <Route path="/" element={<Jobs />} />
-        <Route path="/jobs" element={<Jobs />} />
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/jobs" element={<Jobs />} />
 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
@@ -44,7 +42,8 @@ export default function App() {
         <Route path="/admin" element={<AdminDashboard />} />
 
         <Route path="*" element={<NotFound />} />
-      </Routes>
+        </Routes>
+      </main>
 
       <Footer />
     </BrowserRouter>
